@@ -5,6 +5,8 @@ import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { FaTelegram } from "react-icons/fa";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import Counter from "../ui/counter";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -92,19 +94,27 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden bg-linear-to-b from-[#F8FAFC] via-[#EEF2F7] to-[#F8FAFC]"
     >
       {/* Background Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-linear-to-b from-background/50 via-transparent to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-white/70 via-white/60 to-white/80 backdrop-blur-[1px]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-        <h1 className="text-5xl text-[#0b3c5d] sm:text-6xl lg:text-7xl font-bold  mb-6 leading-tight">
-          Trade the Markets with <span className="">Institutional </span>{" "}
-          <span className="text-accent serif text-7xl  lg:text-8xl">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className=" relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center"
+      >
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0B3C5D] mb-6 leading-tight">
+          Trade the Markets with{" "}
+          <span className="block text-4xl sm:text-5xl lg:text-6xl text-slate-700 font-medium mt-2">
+            Institutional
+          </span>
+          <span className="block serif  text-6xl sm:text-7xl lg:text-8xl text-primary font-extrabold tracking-tight">
             Precision
           </span>
         </h1>
@@ -116,8 +126,12 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className=" rounded-full" size="xxl" variant="tdark">
-            <ArrowRight /> Apply for Mentorship
+          <Button
+            className="rounded-full bg-[#0B3C5D] hover:bg-[#1E5F8A] text-white px-8 shadow-lg hover:shadow-xl transition-all duration-300"
+            size="xxl"
+          >
+            <ArrowRight className="mr-2" />
+            Apply for Mentorship
           </Button>
           <Link
             href="https://t.me/milestraderchat"
@@ -125,36 +139,40 @@ export default function Hero() {
             rel="noopener noreferrer"
           >
             {" "}
-            <Button className="rounded-full" size="xxl" variant="outline">
-              {" "}
-              <FaTelegram />
-              Join free Telegram
+            <Button
+              className="rounded-full border-2 border-[#0B3C5D] text-[#0B3C5D] hover:bg-[#0B3C5D] hover:text-white transition-all duration-300"
+              size="xxl"
+              variant="outline"
+            >
+              <FaTelegram className="mr-2" />
+              Join Free Telegram
             </Button>
           </Link>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-20 pt-20 border-t border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6  mt-20 pt-20 border-t border-border">
           <div className="text-center">
             <div className="text-5xl font-bold  mb-2 serif text-slate-700">
-              300+
+              <Counter value={300} suffix="+" />
             </div>
             <p className="text-sm text-muted-foreground">Traders Mentored</p>
           </div>
           <div className="text-center">
             <div className="text-5xl font-bold  mb-2 serif text-slate-700">
-              5+
+              <Counter value={5} suffix="+" />
             </div>
             <p className="text-sm text-muted-foreground">Years Experience</p>
           </div>
           <div className="text-center">
             <div className="text-5xl font-bold  mb-2 serif text-slate-700">
-              1:3
+              1:
+              <Counter value={3} />
             </div>
             <p className="text-sm text-muted-foreground">Avg Risk : Reward</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
