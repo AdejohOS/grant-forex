@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +41,7 @@ export default function Navbar() {
                 height={100}
               />
             </div>
-            <span className="text-lg font-semibold text-foreground hidden sm:inline">
+            <span className="text-2xl font-semibold text-foreground hidden sm:inline serif">
               Grant Forex
             </span>
           </Link>
@@ -48,10 +49,10 @@ export default function Navbar() {
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => scrollToSection("methodology")}
+              onClick={() => scrollToSection("about")}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Methodology
+              About
             </button>
             <button
               onClick={() => scrollToSection("breakdown")}
@@ -74,12 +75,14 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <button
+          <Button
+            variant="tlight"
+            size="xxl"
             onClick={() => scrollToSection("community")}
             className="px-6 py-2 bg-accent text-accent-foreground rounded-full text-sm font-medium hover:bg-accent/90 transition-colors"
           >
             Join Community
-          </button>
+          </Button>
         </div>
       </div>
     </nav>

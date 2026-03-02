@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
+import { FaTelegram } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -94,49 +98,58 @@ export default function Hero() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background/50 via-transparent to-background" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-        <div className="mb-6 inline-block">
-          <span className="text-sm uppercase tracking-widest text-accent font-medium">
-            Institutional Trading
-          </span>
-        </div>
-
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-          Trade the Markets with{" "}
-          <span className="text-accent">Institutional Precision</span>
+        <h1 className="text-5xl text-[#0b3c5d] sm:text-6xl lg:text-7xl font-bold  mb-6 leading-tight">
+          Trade the Markets with <span className="">Institutional </span>{" "}
+          <span className="text-accent serif text-8xl">Precision</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-          Master Smart Money Concepts, liquidity engineering, and ICT trading
-          models. Join a disciplined community of serious traders focused on
-          market structure and risk management.
+          Learn Smart Money Concepts, liquidity models, and risk management
+          through structured classroom and online mentorship — taught by
+          professional traders, not influencers.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-accent text-accent-foreground rounded-full font-semibold text-base hover:bg-accent/90 transition-all duration-300 transform hover:scale-105">
-            Join the Private Trading Community
-          </button>
-          <button className="px-8 py-4 border border-border text-foreground rounded-full font-semibold text-base hover:bg-card hover:border-accent transition-all duration-300">
-            See Trade Analysis
-          </button>
+          <Button className=" rounded-full" size="xxl" variant="tdark">
+            <ArrowRight /> Apply for Mentorship
+          </Button>
+          <Link
+            href="https://t.me/milestraderchat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            <Button className="rounded-full" size="xxl" variant="outline">
+              {" "}
+              <FaTelegram />
+              Join free Telegram
+            </Button>
+          </Link>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-8 mt-20 pt-20 border-t border-border">
           <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">290+</div>
-            <p className="text-sm text-muted-foreground">Community Members</p>
+            <div className="text-5xl font-bold  mb-2 serif text-slate-700">
+              300+
+            </div>
+            <p className="text-sm text-muted-foreground">Traders Mentored</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">5+</div>
-            <p className="text-sm text-muted-foreground">Years Trading</p>
+            <div className="text-5xl font-bold  mb-2 serif text-slate-700">
+              5+
+            </div>
+            <p className="text-sm text-muted-foreground">Years Experience</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">2.5:1</div>
-            <p className="text-sm text-muted-foreground">Avg Risk:Reward</p>
+            <div className="text-5xl font-bold  mb-2 serif text-slate-700">
+              1:3
+            </div>
+            <p className="text-sm text-muted-foreground">Avg Risk : Reward</p>
           </div>
         </div>
       </div>
