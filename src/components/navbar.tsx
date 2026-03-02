@@ -33,13 +33,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-white overflow-hidden rounded-full flex items-center justify-center">
-              <Image
-                src="/images/grant.png"
-                alt="Grant Forex Logo"
-                width={100}
-                height={100}
-              />
+            <div className="w-16 h-16 relative  bg-white overflow-hidden rounded-full flex items-center justify-center">
+              <Image src="/images/grant.png" alt="Grant Forex Logo" fill />
             </div>
             <span className="text-2xl font-semibold text-foreground hidden sm:inline serif">
               Grant Forex

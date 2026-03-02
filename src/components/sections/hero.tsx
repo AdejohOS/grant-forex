@@ -104,7 +104,9 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-5xl text-[#0b3c5d] sm:text-6xl lg:text-7xl font-bold  mb-6 leading-tight">
           Trade the Markets with <span className="">Institutional </span>{" "}
-          <span className="text-accent serif text-8xl">Precision</span>
+          <span className="text-accent serif text:5xl sm:text-6xl lg:text-8xl">
+            Precision
+          </span>
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
