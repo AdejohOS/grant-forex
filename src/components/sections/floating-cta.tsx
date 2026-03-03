@@ -35,7 +35,7 @@ export function FloatingCTA() {
           Join Community
         </span>
 
-        <div className="bg-[#D4A373] text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-[#c08c5a] transition-all duration-300">
+        <div className="bg-[#D4A373] text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-[#c08c5a] transition-all duration-300 animate-pulse">
           <FaTelegram size={22} />
         </div>
       </a>

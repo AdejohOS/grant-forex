@@ -7,6 +7,8 @@ import { Community } from "@/components/sections/community";
 import { FloatingCTA } from "@/components/sections/floating-cta";
 import Hero from "@/components/sections/hero";
 import { WhyChooseUsSection } from "@/components/sections/why-choose-us";
+import { TradeAnalysis } from "@/components/sections/trade-analysis";
+import { MentorshipProgram } from "@/components/sections/mantorship-program";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <Hero />
       <About />
       <WhyChooseUsSection />
+      <TradeAnalysis />
+      <MentorshipProgram />
 
       <Community />
       <FAQ />
