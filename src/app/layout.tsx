@@ -14,9 +14,38 @@ const playfair = Playfair({
 });
 
 export const metadata: Metadata = {
-  title: "Grant Forex Academy | Professional Forex Mentorship & SMC Training",
+  metadataBase: new URL("https://www.grantforex.com"),
+  title: "Grant Forex Academy | Smart Money Concepts Forex Mentorship",
   description:
-    "Grant Forex Academy (GFX) offers structured forex mentorship built on Smart Money Concepts (SMC) and ICT trading models. Join our professional trading academy for disciplined market execution, risk management, and live classroom training.",
+    "Grant Forex Academy (GFX) provides structured forex mentorship built on Smart Money Concepts (SMC) and ICT trading models. Learn market structure, liquidity concepts, and disciplined risk management.",
+
+  keywords: [
+    "forex mentorship",
+    "smart money concepts forex",
+    "ICT trading strategy",
+    "learn forex trading",
+    "forex academy",
+    "SMC trading",
+  ],
+  alternates: {
+    canonical: "https://www.grantforex.com",
+  },
+
+  openGraph: {
+    title: "Grant Forex Academy",
+    description:
+      "Structured forex mentorship focused on Smart Money Concepts and institutional trading models.",
+    url: "https://www.grantforex.com",
+    siteName: "Grant Forex Academy",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
