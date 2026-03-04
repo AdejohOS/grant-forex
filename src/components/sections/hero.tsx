@@ -134,7 +134,7 @@ export default function Hero() {
             Apply for Mentorship
           </Button>
           <Link
-            href="https://t.me/milestraderchat"
+            href="https://t.me/Grant_fx_trading_community"
             target="_blank"
             rel="noopener noreferrer"
           >

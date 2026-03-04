@@ -35,7 +35,7 @@ export function MentorshipProgram() {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <div className="h-[2px] w-16 bg-[#D4A373] mx-auto mb-6 rounded-full" />
+          <div className="h-0.5 w-16 bg-[#D4A373] mx-auto mb-6 rounded-full" />
 
           <h2 className="text-4xl md:text-5xl font-bold text-[#0B3C5D] leading-tight">
             The <span className="text-[#D4A373]">Mentorship Framework</span>
@@ -50,7 +50,7 @@ export function MentorshipProgram() {
         {/* Timeline Layout */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-slate-200 hidden md:block" />
+          <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-slate-200 hidden md:block" />
 
           <div className="space-y-16">
             {phases.map((phase, index) => (
@@ -63,7 +63,7 @@ export function MentorshipProgram() {
                 className="relative flex items-start gap-8"
               >
                 {/* Number */}
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#D4A373]/15 text-[#D4A373] font-bold flex items-center justify-center z-10">
+                <div className="shrink-0 w-10 h-10 rounded-full bg-[#D4A373]/15 text-[#D4A373] font-bold flex items-center justify-center z-10">
                   {index + 1}
                 </div>
 

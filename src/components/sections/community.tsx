@@ -2,6 +2,7 @@
 import { FaTelegram } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function Community() {
   const benefits = [
@@ -84,13 +85,19 @@ export function Community() {
           <p className="text-sm text-slate-500 mb-6">
             🔥 300+ Active Traders Inside
           </p>
-          <Button
-            size="xxl"
-            className="bg-[#D4A373] text-white px-10 py-4 rounded-full font-semibold text-lg shadow-md hover:bg-[#c08c5a] hover:shadow-xl transition-all duration-300"
+          <Link
+            href="https://t.me/Grant_fx_trading_community"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <FaTelegram className="mr-2" />
-            Join Grant Forex Telegram
-          </Button>
+            <Button
+              size="xxl"
+              className="bg-[#D4A373] text-white px-10 py-4 rounded-full font-semibold text-lg shadow-md hover:bg-[#c08c5a] hover:shadow-xl transition-all duration-300"
+            >
+              <FaTelegram className="mr-2" />
+              Join Grant Forex Telegram
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
