@@ -40,7 +40,11 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <div className="w-14 h-14 relative overflow-hidden flex items-center justify-center">
               {" "}
-              <Image src="/images/grant.png" alt="Grant Forex Logo" fill />
+              <Image
+                src="/images/grant_no_bg.png"
+                alt="Grant Forex Logo"
+                fill
+              />
             </div>
             <span className="text-2xl font-semibold text-foreground hidden sm:inline serif">
               Grant Forex

@@ -18,10 +18,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 relative overflow-hidden">
+              <div className="w-10 h-10 relative overflow-hidden rounded-full bg-white flex items-center justify-center">
                 {" "}
                 <Image
-                  src="/images/grant.png"
+                  src="/images/grant_no_bg.png"
                   alt="Grant Forex Logo"
                   width={100}
                   height={100}
