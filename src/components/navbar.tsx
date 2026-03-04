@@ -60,10 +60,10 @@ export default function Navbar() {
               About
             </button>
             <button
-              onClick={() => scrollToSection("breakdown")}
+              onClick={() => scrollToSection("pricing")}
               className="text-sm font-medium text-slate-600 hover:text-[#0B3C5D] transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#0B3C5D] after:transition-all hover:after:w-full"
             >
-              Trade Analysis
+              Pricing
             </button>
             <button
               onClick={() => scrollToSection("community")}

@@ -25,7 +25,7 @@ const phases = [
 
 export function MentorshipProgram() {
   return (
-    <section className="py-28 px-4 bg-white">
+    <section className="py-24 px-4 bg-white" id="mentorship">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div

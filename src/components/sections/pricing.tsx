@@ -48,7 +48,7 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="py-24 px-4 bg-gradient-to-b from-[#F8FAFC] to-[#EEF2F7]"
+      className="py-24 px-4 bg-linear-to-b from-[#F8FAFC] to-[#EEF2F7]"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
@@ -59,7 +59,7 @@ export function Pricing() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <div className="h-[2px] w-16 bg-[#D4A373] mx-auto mb-6 rounded-full" />
+          <div className="h-0.5 w-16 bg-[#D4A373] mx-auto mb-6 rounded-full" />
 
           <h2 className="text-4xl md:text-5xl font-bold text-[#0B3C5D]">
             Mentorship <span className="text-[#D4A373]">Programs</span>
