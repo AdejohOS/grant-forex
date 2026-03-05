@@ -48,6 +48,7 @@ export default function FAQ() {
       className="py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-[#F8FAFC] to-[#EEF2F7]"
     >
       <div className="max-w-3xl mx-auto">
+        <div className="h-0.5 w-16 bg-[#D4A373] mx-auto mb-6 rounded-full" />
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0B3C5D] leading-tight">
             Frequently Asked <span className="text-[#D4A373]">Questions</span>
@@ -105,7 +106,7 @@ export default function FAQ() {
             traders.
           </p>
           <Link
-            href="https://t.me/milestraderchat"
+            href="https://t.me/Grant_fx_trading_community"
             target="_blank"
             className="inline-block mb-4 cursor-pointer"
           >

@@ -41,6 +41,7 @@ export function Community() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
+          <div className="h-0.5 w-16 bg-[#D4A373] mx-auto mb-6 rounded-full" />
           <h3 className="text-4xl md:text-5xl font-bold text-[#0B3C5D] leading-tight">
             Start with the{" "}
             <span className="text-[#D4A373]">Free Community</span>

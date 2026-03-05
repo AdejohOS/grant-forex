@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaTelegram } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -41,19 +41,19 @@ export function FloatingCTA() {
         <ArrowUp size={18} />
       </button>
 
-      {/* Telegram CTA */}
+      {/* WhatsApp CTA */}
       <a
-        href="https://t.me/milestraderchat"
+        href="https://wa.me/2349134598884?text=Hello%20I%20want%20to%20apply%20for%20Grant%20Forex%20Mentorship"
         target="_blank"
         rel="noopener noreferrer"
         className="group relative"
       >
         <span className="absolute right-16 bg-[#0B3C5D] text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-          Join Community
+          Chat on WhatsApp
         </span>
-        <div className="bg-[#D4A373] text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-[#c08c5a] transition-all duration-300 glow">
-          {" "}
-          <FaTelegram
+
+        <div className="bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-green-600 transition-all duration-300 glow">
+          <FaWhatsapp
             size={22}
             className="transition-transform group-hover:rotate-12"
           />

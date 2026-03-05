@@ -91,6 +91,11 @@ export default function Hero() {
     return () => resizeObserver.disconnect();
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id="hero"
@@ -127,6 +132,7 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
+            onClick={() => scrollToSection("pricing")}
             className="rounded-full bg-[#0B3C5D] hover:bg-[#1E5F8A] text-white px-8 shadow-lg hover:shadow-xl transition-all duration-300"
             size="xxl"
           >
