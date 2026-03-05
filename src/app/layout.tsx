@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair, Figtree } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/navbar";
 
 const figtree = Figtree({
   variable: "--font-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({
           figtree.variable,
         )}
       >
+        <Navbar />
         {children}
       </body>
     </html>

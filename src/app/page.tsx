@@ -1,5 +1,5 @@
 import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+
 import { About } from "@/components/sections/about";
 
 import FAQ from "@/components/sections/faq";
@@ -14,7 +14,6 @@ import { Pricing } from "@/components/sections/pricing";
 export default function Home() {
   return (
     <div className="bg-background">
-      <Navbar />
       <Hero />
       <About />
       <WhyChooseUsSection />

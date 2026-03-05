@@ -133,7 +133,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-slate-300">
               <li className="flex gap-2  items-start">
                 <MapPin className="shrink-0 size-4" />
-                Shop C9, Baki Plaza, Kuje, Abuja, Nigeria
+                Shop C9, Blaki Plaza, Kuje, Abuja, Nigeria.
               </li>
               <li className="flex gap-2 items-center">
                 <Phone className="shrink-0 size-4" />
