@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ApplyPage() {
   const params = useSearchParams();
@@ -68,7 +69,7 @@ export default function ApplyPage() {
     router.push(
       `/checkout?plan=${plan}&name=${encodeURIComponent(
         name,
-      )}&email=${encodeURIComponent(email)}`,
+      )}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`,
     );
   };
 
@@ -148,6 +149,17 @@ export default function ApplyPage() {
               className="w-full border px-4 py-3 rounded-full"
               onChange={(e) => setPhone(e.target.value)}
             />
+            <p className="text-xs text-center text-gray-500 flex items-center justify-center gap-1">
+              Secure payment powered by{" "}
+              <span className="relative aspect-video">
+                <Image
+                  src="/images/Paystack.png"
+                  alt="Paystack"
+                  width={100}
+                  height={100}
+                />
+              </span>
+            </p>
 
             <Button
               size="xxl"
