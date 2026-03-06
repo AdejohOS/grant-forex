@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const reference = `GFX-${plan}-${Date.now()}`;
+  const reference = `GFX-${Date.now()}-${Math.floor(Math.random() * 100000)}`;
 
   const response = await fetch(
     "https://api.paystack.co/transaction/initialize",
