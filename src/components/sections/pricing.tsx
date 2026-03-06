@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function Pricing() {
   const plans = [
     {
       title: "Online Mentorship",
+      slug: "online",
       price: "₦200,000",
       description: "Learn from anywhere with structured online mentorship.",
       features: [
@@ -19,6 +21,7 @@ export function Pricing() {
     },
     {
       title: "Physical Classroom",
+      slug: "physical",
       price: "₦250,000",
       description: "In-person learning with hands-on trading sessions.",
       features: [
@@ -32,6 +35,7 @@ export function Pricing() {
     },
     {
       title: "One-on-One Mentorship",
+      slug: "private",
       price: "₦300,000",
       description: "Private mentorship tailored to your trading goals.",
       features: [
@@ -51,7 +55,7 @@ export function Pricing() {
       className="py-24 px-4 bg-linear-to-b from-[#F8FAFC] to-[#EEF2F7]"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,34 +83,30 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative p-8 rounded-2xl border bg-white transition-all duration-300
-              ${
-                plan.popular
-                  ? "border-[#D4A373] shadow-xl scale-105"
-                  : "border-slate-200 shadow-md hover:shadow-lg"
-              }`}
+              className={`relative p-8 rounded-2xl border bg-white transition-all duration-300 hover:-translate-y-2
+${
+  plan.popular
+    ? "border-[#D4A373] shadow-xl scale-105"
+    : "border-slate-200 shadow-md hover:shadow-xl"
+}`}
             >
-              {/* Most Popular Badge */}
+              {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D4A373] text-white text-sm px-4 py-1 rounded-full shadow">
                   Most Popular
                 </div>
               )}
 
-              {/* Title */}
               <h3 className="text-xl font-semibold text-[#0B3C5D] mb-2">
                 {plan.title}
               </h3>
 
-              {/* Description */}
               <p className="text-slate-500 text-sm mb-6">{plan.description}</p>
 
-              {/* Price */}
               <div className="text-3xl font-bold text-[#D4A373] mb-6">
                 {plan.price}
               </div>
 
-              {/* Features */}
               <ul className="space-y-3 mb-8 text-slate-600 text-sm">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-2">
@@ -116,22 +116,23 @@ export function Pricing() {
                 ))}
               </ul>
 
-              {/* CTA Button */}
-              <button
-                className={`w-full py-3 rounded-full font-semibold transition-all duration-300
-                ${
-                  plan.popular
-                    ? "bg-[#0B3C5D] text-white hover:bg-[#1E5F8A]"
-                    : "bg-slate-100 text-[#0B3C5D] hover:bg-slate-200"
-                }`}
-              >
-                Apply Now
-              </button>
+              {/* APPLY BUTTON */}
+              <Link href={`/apply?plan=${plan.slug}`}>
+                <button
+                  className={`w-full py-3 rounded-full font-semibold transition-all duration-300
+                  ${
+                    plan.popular
+                      ? "bg-[#0B3C5D] text-white hover:bg-[#1E5F8A]"
+                      : "bg-slate-100 text-[#0B3C5D] hover:bg-slate-200"
+                  }`}
+                >
+                  Apply & Secure Your Slot
+                </button>
+              </Link>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Note */}
         <p className="text-center text-sm text-slate-500 mt-12">
           Limited seats available for each mentorship batch.
         </p>
