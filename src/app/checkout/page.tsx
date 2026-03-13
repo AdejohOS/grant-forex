@@ -4,11 +4,16 @@ import { useSearchParams } from "next/navigation";
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+
+import { ArrowRight, Loader2 } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+import Link from "next/link";
 
 export default function CheckoutPage() {
   const params = useSearchParams();
+
+  const [loading, setLoading] = useState(false);
 
   const plan = params.get("plan") || "online";
   const name = params.get("name") || "";
@@ -32,29 +37,14 @@ export default function CheckoutPage() {
 
   const selectedPlan = plans[plan as keyof typeof plans];
 
-  const config = {
-    reference: new Date().getTime().toString(),
-    email,
-    amount: selectedPlan.price * 100, // Paystack uses kobo
-    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY!,
-    metadata: {
-      name,
-      phone,
-      plan: selectedPlan.title,
-    },
-  };
-
-  const onSuccess = () => {
-    window.location.href = "/success";
-  };
-
-  const onClose = () => {
-    console.log("Payment closed");
-  };
-
   const handlePayment = async () => {
-    const res = await fetch("/api/paystack/initialize", {
+    setLoading(true);
+
+    const res = await fetch("/api/kora/initialize", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         email,
         amount: selectedPlan.price,
@@ -64,10 +54,24 @@ export default function CheckoutPage() {
       }),
     });
 
+    if (!res.ok) {
+      toast.error("Payment initialization failed");
+      setLoading(false);
+      return;
+    }
+
     const data = await res.json();
 
-    window.location.href = data.data.authorization_url;
+    if (!data?.data?.checkout_url) {
+      toast.error("Payment initialization failed", { position: "top-center" });
+
+      setLoading(false);
+      return;
+    }
+
+    window.location.href = data.data.checkout_url;
   };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4 py-28">
       <motion.div
@@ -115,21 +119,26 @@ export default function CheckoutPage() {
           size="xxl"
           onClick={handlePayment}
           className="w-full bg-[#0B3C5D] text-white py-3 rounded-full"
+          disabled={loading}
         >
-          Pay Now <ArrowRight />
+          {loading ? "Redirecting..." : "Proceed to Payment"}
+          {loading ? (
+            <Loader2 className="animate-spin size-4" />
+          ) : (
+            <ArrowRight />
+          )}
         </Button>
 
         {/* Trust message */}
-        <p className="text-xs text-center text-gray-500 flex items-center justify-center gap-1">
-          Secure payment powered by{" "}
-          <span className="relative aspect-video">
-            <Image
-              src="/images/Paystack.png"
-              alt="Paystack"
-              width={100}
-              height={100}
-            />
-          </span>
+        <p className="text-xs text-center text-gray-500 flex items-center justify-center gap-1 mt-2">
+          Secure encrypted payment powered by{" "}
+          <Link
+            href="https://www.korahq.com/"
+            target="_blank"
+            className="text-blue-500"
+          >
+            Kora
+          </Link>
         </p>
       </motion.div>
     </div>

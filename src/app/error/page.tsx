@@ -12,7 +12,7 @@ export default function PaymentErrorPage() {
         initial={{ opacity: 0, y: 40, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-white p-10 rounded-2xl shadow-xl text-center max-w-md"
+        className="bg-white p-10 mt-10 rounded-2xl shadow-xl text-center max-w-md"
       >
         {/* Icon */}
         <motion.div

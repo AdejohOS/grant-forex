@@ -27,7 +27,7 @@ export function Pricing() {
       features: [
         "Live classroom training",
         "Direct mentor interaction",
-        "Hands-on chart analysis",
+        "Free wifi and signals",
         "Practical trading sessions",
         "Structured learning environment",
       ],
@@ -40,7 +40,7 @@ export function Pricing() {
       description: "Private mentorship tailored to your trading goals.",
       features: [
         "Personal mentorship sessions",
-        "Custom trading strategy guidance",
+        "Free wifi and signals",
         "Trade review feedback",
         "Risk management coaching",
         "Direct mentor access",

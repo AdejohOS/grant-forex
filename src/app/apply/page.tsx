@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ApplyPage() {
   const params = useSearchParams();
@@ -34,7 +35,7 @@ export default function ApplyPage() {
         "Attend in-person training sessions with hands-on trading education, practical chart analysis, and guided mentorship.",
       features: [
         "Live Classroom Training",
-        "Practical Chart Analysis",
+        "Free wifi and signals",
         "Structured Trading Curriculum",
         "Direct Mentor Interaction",
         "Risk Management Training",
@@ -48,7 +49,7 @@ export default function ApplyPage() {
         "Private mentorship designed for traders who want personalized guidance, deeper strategy development, and faster progress.",
       features: [
         "Private Mentorship Sessions",
-        "Personalized Trading Plan",
+        "Free wifi and signals",
         "Direct Strategy Development",
         "Advanced Trade Execution",
         "Account Growth Guidance",
@@ -63,8 +64,12 @@ export default function ApplyPage() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+  const [accepted, setAccepted] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!accepted) return;
 
     router.push(
       `/checkout?plan=${plan}&name=${encodeURIComponent(
@@ -149,25 +154,48 @@ export default function ApplyPage() {
               className="w-full border px-4 py-3 rounded-full"
               onChange={(e) => setPhone(e.target.value)}
             />
-            <p className="text-xs text-center text-gray-500 flex items-center justify-center gap-1">
-              Secure payment powered by{" "}
-              <span className="relative aspect-video">
-                <Image
-                  src="/images/Paystack.png"
-                  alt="Paystack"
-                  width={100}
-                  height={100}
-                />
-              </span>
+            <p className="text-xs text-center text-gray-500">
+              Secure encrypted payment powered by{" "}
+              <Link
+                href="https://www.korahq.com/"
+                target="_blank"
+                className="text-blue-500"
+              >
+                Kora
+              </Link>
             </p>
+            <div className="flex items-start gap-2 text-sm text-gray-600">
+              <input
+                type="checkbox"
+                checked={accepted}
+                onChange={(e) => setAccepted(e.target.checked)}
+                className="mt-1"
+              />
+
+              <p>
+                I confirm that Grant Forex Academy provides educational
+                mentorship only. I understand that all payments are final and
+                non-refundable once enrollment is completed.
+              </p>
+            </div>
 
             <Button
               size="xxl"
               type="submit"
+              disabled={!accepted}
               className="w-full bg-[#0B3C5D] text-white py-3 rounded-full hover:bg-[#1E5F8A] transition"
             >
               Continue to Payment <ArrowRight />
             </Button>
+
+            <div className="relative flex justify-center ">
+              <Image
+                src="/images/pay.png"
+                alt="secured secured channels"
+                height={150}
+                width={150}
+              />
+            </div>
           </form>
         </div>
       </div>
